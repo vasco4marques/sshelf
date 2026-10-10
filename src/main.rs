@@ -53,7 +53,9 @@ fn pick_host(config: &str, prompt: &str) -> String {
         );
         exit(1);
     }
-    Select::new(prompt, hosts).prompt().unwrap_or_else(|e| prompt_failed(e))
+    Select::new(prompt, hosts)
+        .prompt()
+        .unwrap_or_else(|e| prompt_failed(e))
 }
 
 fn connect(config: &str) -> ! {
